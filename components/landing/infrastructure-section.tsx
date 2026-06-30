@@ -6,6 +6,7 @@ const projectCategories = [
   {
     number: "01",
     title: "Event Post-Production",
+    ghost: "EVENTS",
     category: "Post-Production / Event Recap",
     description: "High-energy event recaps and seamless post-production editing that captures the vibe, tempo, and atmosphere of live events.",
     samples: [
@@ -16,6 +17,7 @@ const projectCategories = [
   {
     number: "02",
     title: "Motion Graphics",
+    ghost: "MOTION",
     category: "Motion Graphics / Animation",
     description: "Bold motion design, kinetic type, and custom animations that bring visual stories to life.",
     samples: [
@@ -26,6 +28,7 @@ const projectCategories = [
   {
     number: "03",
     title: "Talking Head Videos",
+    ghost: "TALKING",
     category: "Educational / Course Content",
     description: "Clean, engaging talking head edits with pacing, captions, and clarity for courses and creators.",
     samples: [
@@ -36,6 +39,7 @@ const projectCategories = [
   {
     number: "04",
     title: "AI-Generated Videos",
+    ghost: "AI",
     category: "AI Video / Creative Tech",
     description: "Cutting-edge videos powered by AI generation, custom voice synthesis, and dynamic AI-driven visuals.",
     samples: [
@@ -143,11 +147,19 @@ function CategoryBlock({
     >
       {/* Category header */}
       <div className="mb-8 lg:mb-10 pb-8 lg:pb-10 border-b border-white/10">
-        <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-end">
+        <div className="relative grid lg:grid-cols-12 gap-6 lg:gap-12 items-end overflow-hidden">
+          {/* Ghost watermark word */}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none select-none absolute -right-6 top-1/2 -translate-y-1/2 font-display font-black uppercase leading-none text-white/[0.04] whitespace-nowrap"
+            style={{ fontSize: "clamp(80px, 15vw, 200px)", letterSpacing: "-0.04em" }}
+          >
+            {category.ghost}
+          </span>
           <div className="lg:col-span-1">
             <span className="font-mono text-sm text-[#eca8d6]">{category.number}</span>
           </div>
-          <div className="lg:col-span-11">
+          <div className="lg:col-span-11 relative z-10">
             <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display text-white tracking-tight leading-[0.95]">
               {category.title}
             </h3>
