@@ -65,7 +65,7 @@ export function CtaSection() {
                     asChild
                     className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
                   >
-                    <a href="mailto:aviral12312@gmail.com">
+                    <a href="https://wa.me/917906470113" target="_blank" rel="noopener noreferrer">
                       I&apos;m Ready to Start
                       <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                     </a>
